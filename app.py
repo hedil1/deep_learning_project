@@ -263,7 +263,7 @@ with st.sidebar:
 # ===========================
 # PAGE 1 - ACCUEIL
 # ===========================
-if page == "🏠 Accueil":
+if page == " Accueil":
     st.markdown("""
     <div class="main-header">
         <h1>🔬 EndoDetect AI</h1>
@@ -288,7 +288,7 @@ if page == "🏠 Accueil":
     with col2:
         st.markdown("""
         <div class="card">
-            <h3>🤖 Notre Solution IA</h3>
+            <h3> Notre Solution IA</h3>
             <p style="line-height:1.8; color:#051B1D;">
                 Systeme base sur <strong style="color:#00666B">VGG16 Transfer Learning</strong>
                 pour analyser automatiquement les images laparoscopiques.
@@ -302,7 +302,7 @@ if page == "🏠 Accueil":
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown("<div class='section-title'>📊 Performances du Modele</div>",
+    st.markdown("<div class='section-title'> Performances du Modele</div>",
                 unsafe_allow_html=True)
     m1, m2, m3, m4, m5 = st.columns(5)
     for col, (val, label) in zip([m1, m2, m3, m4, m5], [
@@ -320,24 +320,24 @@ if page == "🏠 Accueil":
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
-        <h3>📖 Comment utiliser l'application ?</h3>
+        <h3> Comment utiliser l'application ?</h3>
         <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-top:16px;">
             <div style="text-align:center; padding:20px; background:rgba(57,168,173,0.08); border-radius:12px;">
-                <div style="font-size:2.5rem">📁</div>
+                <div style="font-size:2.5rem"></div>
                 <div style="font-weight:600; color:#00666B; margin:8px 0">Etape 1</div>
                 <div style="font-size:0.9rem; color:#051B1D">
                     Aller dans <strong>Diagnostic</strong> et uploader une image laparoscopique
                 </div>
             </div>
             <div style="text-align:center; padding:20px; background:rgba(57,168,173,0.08); border-radius:12px;">
-                <div style="font-size:2.5rem">🧠</div>
+                <div style="font-size:2.5rem"></div>
                 <div style="font-weight:600; color:#00666B; margin:8px 0">Etape 2</div>
                 <div style="font-size:0.9rem; color:#051B1D">
                     Cliquer sur <strong>Analyser</strong> et attendre le resultat
                 </div>
             </div>
             <div style="text-align:center; padding:20px; background:rgba(57,168,173,0.08); border-radius:12px;">
-                <div style="font-size:2.5rem">📊</div>
+                <div style="font-size:2.5rem"></div>
                 <div style="font-weight:600; color:#00666B; margin:8px 0">Etape 3</div>
                 <div style="font-size:0.9rem; color:#051B1D">
                     Consulter le resultat et la carte Grad-CAM
@@ -368,9 +368,9 @@ elif page == "🔬 Diagnostic":
         st.error("❌ Modèle introuvable ! Vérifiez que le fichier existe dans le dossier model/")
         st.stop()
 
-    st.success("✅ Modèle VGG16 chargé avec succès !")
+    st.success(" Modèle VGG16 chargé avec succès !")
 
-    st.markdown("<div class='section-title'>📁 Upload de l'Image</div>",
+    st.markdown("<div class='section-title'> Upload de l'Image</div>",
                 unsafe_allow_html=True)
 
     uploaded_file = st.file_uploader(
@@ -482,10 +482,10 @@ elif page == "🔬 Diagnostic":
 # ===========================
 # PAGE 3 - PERFORMANCE
 # ===========================
-elif page == "📊 Performance du Modele":
+elif page == " Performance du Modele":
     st.markdown("""
     <div class="main-header">
-        <h1>📊 Performance du Modele</h1>
+        <h1> Performance du Modele</h1>
         <p>Comparaison des architectures Deep Learning</p>
     </div>
     """, unsafe_allow_html=True)
