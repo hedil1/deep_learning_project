@@ -6,22 +6,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import io
 import os
-import gdown
 
-# ===========================
-# TELECHARGER LE MODELE
-# ===========================
-def download_model():
-    model_path = 'model/vgg16_best.keras'
-    if not os.path.exists(model_path):
-        os.makedirs('model', exist_ok=True)
-        st.info('Telechargement du modele depuis Google Drive...')
-        file_id = '1E_f_JoDw5B8jlD0IFH-tbOtQyQlEKTt1'
-        url = f'https://drive.google.com/uc?id={file_id}'
-        gdown.download(url, model_path, quiet=False)
-        st.success('Modele telecharge !')
-
-download_model()
 
 # ===========================
 # CONFIGURATION PAGE
@@ -173,11 +158,11 @@ st.markdown("""
 
 
 # ===========================
-# CHARGEMENT DU MODELE
+# CHARGEMENT DU MODELE (une seule fois grace au cache)
 # ===========================
 @st.cache_resource
 def load_model():
-    model_path = 'model/vgg16_best.keras'
+    model_path = os.path.join(os.path.dirname(__file__), 'model', 'vgg16_best.keras')
     if os.path.exists(model_path):
         model = tf.keras.models.load_model(model_path)
         return model
@@ -380,10 +365,10 @@ elif page == "🔬 Diagnostic":
 
     model = load_model()
     if model is None:
-        st.error("Modele non trouve ! Verifiez que le telechargement s'est bien passe.")
+        st.error("❌ Modèle introuvable ! Vérifiez que le fichier existe dans le dossier model/")
         st.stop()
 
-    st.success("Modele VGG16 charge avec succes !")
+    st.success("✅ Modèle VGG16 chargé avec succès !")
 
     st.markdown("<div class='section-title'>📁 Upload de l'Image</div>",
                 unsafe_allow_html=True)
