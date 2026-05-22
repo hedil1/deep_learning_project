@@ -19,7 +19,7 @@ Développer un système de **classification binaire** d'images laparoscopiques b
 
 ##  Jeu de Données
 
-**Source :** [Kaggle — Dataset Endometriosis and Non-Endometriosis](https://www.kaggle.com/datasets/dayanamurillog/dataset-endometriosis-and-non-endometriosis)
+**Source :** [Kaggle — Dataset Endometriosis and Non-Endometriosis]
 
 | Caractéristique | Valeur |
 |-----------------|--------|
